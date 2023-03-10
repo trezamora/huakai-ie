@@ -40,6 +40,16 @@ renderer.gammaOutput = true;
 renderer.antialias = true;
 document.body.appendChild(renderer.domElement);
 
+function resize() {
+    //UPDATE TO CANVAS WRAPPER
+    console.log("resizing");
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+window.addEventListener("resize", resize);
+
+//LIGHTS
 function initLight() {
     const light = new THREE.DirectionalLight(0xFFFFFF, 5);
     light.name = 'light';
