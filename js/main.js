@@ -3,11 +3,6 @@ var myCanvas = document.getElementById('mycanvas');
 
 //Scene
 const scene = new THREE.Scene();
-// const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-
-// const renderer = new THREE.WebGLRenderer();
-// renderer.setSize(window.innerWidth, window.innerHeight);
-// document.body.appendChild(renderer.domElement);
 
 //Camera
 var height = window.innerHeight;
@@ -15,11 +10,12 @@ var width = window.innerWidth;
 var distance = 50000;
 var diag = Math.sqrt((height * height) + (width * width))
 var fov = 2 * Math.atan((diag) / (1 * distance)) * (180 / Math.PI); //Field of View
-var camera = new THREE.PerspectiveCamera(fov, window.innerWidth / window.innerHeight, 0.1, distance);
+var camera = new THREE.PerspectiveCamera(5, window.innerWidth / window.innerHeight, 0.1, 1000);
+// var camera = new THREE.PerspectiveCamera(fov, window.innerWidth / window.innerHeight, 0.1, distance);
 // TOP VIEW
-// camera.position.set(0, 40, 0);
+camera.position.set(0, 40, 0);
 // BOTTOM LEFT VIEW
-camera.position.set(20, 10, 20);
+// camera.position.set(20, 10, 20);
 
 //Renderer
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
