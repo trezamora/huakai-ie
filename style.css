@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url(img/indoor-dark.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    overflow: hidden;
+}
+
 /* .canvas-wrapper {
     position: fixed;
     width: 100vw;

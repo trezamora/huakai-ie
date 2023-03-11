@@ -2,7 +2,12 @@
 var myCanvas = document.getElementById('mycanvas');
 
 //Scene
-var scene = new THREE.Scene();
+const scene = new THREE.Scene();
+// const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+// const renderer = new THREE.WebGLRenderer();
+// renderer.setSize(window.innerWidth, window.innerHeight);
+// document.body.appendChild(renderer.domElement);
 
 //Camera
 var height = window.innerHeight;
@@ -59,12 +64,14 @@ function initLight() {
     scene.add(light);
     light.target.name = 'light.target';
     scene.add(light.target);
+
     //add light helper
     const lightHelper = new THREE.DirectionalLightHelper(light, 10);
     lightHelper.name = 'lightHelper';
     scene.add(lightHelper);
     lightHelper.parent.updateMatrixWorld();
     lightHelper.update();
+
     //add shadow helper
     const shadowHelper = new THREE.CameraHelper(light.shadow.camera);
     shadowHelper.name = 'shadowHelper';
@@ -72,16 +79,6 @@ function initLight() {
     shadowHelper.parent.updateMatrixWorld();
     shadowHelper.update();
 }
-
-//LIGHTS
-// const light = new THREE.AmbientLight(0x404040); // soft white light
-// scene.add(light);
-// light.power = 6640;  // GE Lumens @ 60W incade.
-// light.decay = 2;
-// light.distance = Infinity;
-// light.position.set(0, 80, 0);
-// light.castShadow = false;
-// light.shadowCameraVisible = false;
 
 //OrbitControls
 orbit = new THREE.OrbitControls(camera, renderer.domElement);
