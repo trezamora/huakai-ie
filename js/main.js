@@ -38,9 +38,11 @@ function onWindowResize() {
 /////////////////////////////////////////////////////////////////////////
 ///// CREATE ORBIT CONTROLS
 //OrbitControls
+
 var controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.maxPolarAngle = Math.PI / 2;
 controls.update();
+
 
 /////////////////////////////////////////////////////////////////////////
 ///// SCENE LIGHTS
@@ -86,12 +88,13 @@ introAnimation() // call intro animation on start
 //// DEFINE ORBIT CONTROLS LIMITS
 function setOrbitControlsLimits() {
     controls.enableDamping = true
-    controls.dampingFactor = 0.04
+    controls.dampingFactor = 0.05
     controls.minDistance = 0
     controls.maxDistance = 99999
+    controls.enablePan = true;
     controls.enableRotate = true
     controls.enableZoom = true
-    controls.maxPolarAngle = 180 // Math.PI /2.5
+    controls.maxPolarAngle = Math.PI / 2 // Math.PI /2.5
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -213,6 +216,7 @@ scene.add(ambientLight);
 const dirLight = new THREE.DirectionalLight(light, 1);
 dirLight.position.set(100, 10, 100);
 scene.add(dirLight);
+
 
 // //Renderer
 // const ambientLight = new THREE.AmbientLight(0xece1bc, 1);
