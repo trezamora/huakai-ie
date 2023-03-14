@@ -15,15 +15,43 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<header class="site-header">
+	<div class="side-nav">
+		<nav class="upper-nav">
+			<h2>Navigation</h2>
+			<ul>
+				<button id="home">Go to Home</button>
+				<button id="cafeteria">Go to Cafeteria</button>
+				<button id="mokihana">Go to Mokihana</button>
 
-	<div class="canvas-wrapper">
-		<canvas id="mycanvas" class="mycanvas"></canvas>
+				<button id="camposition">Console.log Current Camera Position</button>
+			</ul>
+		</nav>
+		<nav class="lower-nav">
+			<h2>Affiliations</h2>
+			<ul>
+				<li>
+					<a href="https://trezamora.github.io/teezee.design/">TEEZEETHEDESIGNER</a>
+					<a href="https://nma.kapiolani.hawaii.edu/index.html">New Media Arts Program</a>
+					<a href="https://kccstem.com/">KapCC STEM Program</a>
+					<a href="https://www.kapiolani.hawaii.edu/">Kapi&lsquo;olani Community College</a>
+				</li>
+			</ul>
+		</nav>
 	</div>
+</header>
 
+
+<body>
+	<div id="map-wrapper"></div>
+
+	<!-- <div class="canvas-wrapper">
+		<canvas id="mycanvas" class="mycanvas"></canvas>
+	</div> -->
 
 	<!-- THREE JS FILES -->
 	<script src="js/three.js"></script>
+	<script src="js/Tween.js"></script>
 	<script src="js/GLTFLoader.js"></script>
 	<script src="js/OrbitControls.js"></script>
 
