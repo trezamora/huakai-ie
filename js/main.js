@@ -38,7 +38,6 @@ function onWindowResize() {
 /////////////////////////////////////////////////////////////////////////
 ///// CREATE ORBIT CONTROLS
 //OrbitControls
-
 var controls = new THREE.OrbitControls(camera, renderer.domElement);
 controls.maxPolarAngle = Math.PI / 2;
 controls.update();
@@ -93,6 +92,7 @@ function setOrbitControlsLimits() {
     controls.maxDistance = 99999
     controls.enablePan = true;
     controls.enableRotate = true
+    controls.rotateSpeed = .05
     controls.enableZoom = true
     controls.maxPolarAngle = Math.PI / 2 // Math.PI /2.5
 }
